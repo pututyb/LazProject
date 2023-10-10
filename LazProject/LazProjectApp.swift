@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LazProjectApp: App {
+    @StateObject private var viewModel = SignInViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }

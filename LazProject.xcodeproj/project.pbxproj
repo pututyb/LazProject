@@ -7,18 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080562B72AB9ADFC00202E0F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080562B62AB9ADFC00202E0F /* SignUpView.swift */; };
+		080FA5D52AC06F2A002EC3E9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080FA5D42AC06F2A002EC3E9 /* Models.swift */; };
+		08159C1E2AD17A5A00315EF0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08159C1D2AD17A5A00315EF0 /* CartViewModel.swift */; };
 		08175FE92AB954DE0018EE42 /* LazProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08175FE82AB954DE0018EE42 /* LazProjectApp.swift */; };
 		08175FEB2AB954DE0018EE42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08175FEA2AB954DE0018EE42 /* ContentView.swift */; };
 		08175FED2AB954E00018EE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08175FEC2AB954E00018EE42 /* Assets.xcassets */; };
 		08175FF02AB954E00018EE42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08175FEF2AB954E00018EE42 /* Preview Assets.xcassets */; };
+		08175FFA2AB959F50018EE42 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08175FF92AB959F50018EE42 /* OnBoardingView.swift */; };
+		081760012AB967C30018EE42 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081760002AB967C30018EE42 /* GetStartedView.swift */; };
+		081C14332ACB0D1100660F74 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C14322ACB0D1100660F74 /* AddReviewView.swift */; };
+		0842BDD42AC19CCB00E50012 /* DashboardNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842BDD32AC19CCB00E50012 /* DashboardNavigation.swift */; };
+		0883100F2ABFE9810034E850 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0883100E2ABFE9810034E850 /* SignInViewModel.swift */; };
+		088310112ABFE99E0034E850 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088310102ABFE99E0034E850 /* WebService.swift */; };
+		089CD1B02ACBBCE80020A77B /* OneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089CD1AD2ACBBCE70020A77B /* OneView.swift */; };
+		089CD1B12ACBBCE80020A77B /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089CD1AE2ACBBCE80020A77B /* ThreeView.swift */; };
+		089CD1B22ACBBCE80020A77B /* TwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089CD1AF2ACBBCE80020A77B /* TwoView.swift */; };
+		089CD1B42ACBDB5D0020A77B /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089CD1B32ACBDB5D0020A77B /* CartView.swift */; };
+		08A7B91A2ABDD23300BE7E8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7B9192ABDD23300BE7E8F /* HomeView.swift */; };
+		08ACC8712ABBF5EB00DE4D26 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACC8702ABBF5EB00DE4D26 /* ForgotPasswordView.swift */; };
+		08ACC8732ABBFA1F00DE4D26 /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACC8722ABBFA1F00DE4D26 /* VerificationCodeView.swift */; };
+		08ACC8752ABC02B500DE4D26 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACC8742ABC02B500DE4D26 /* OTPTextField.swift */; };
+		08ACC8772ABC0F1600DE4D26 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACC8762ABC0F1500DE4D26 /* NewPasswordView.swift */; };
+		08BEA3932AC29119003FD670 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BEA3922AC29119003FD670 /* SplashScreenView.swift */; };
+		08BEA3952AC29A4C003FD670 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BEA3942AC29A4C003FD670 /* Test.swift */; };
+		08C4873B2AC2E2CA00245998 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4873A2AC2E2CA00245998 /* HomeViewModel.swift */; };
+		08DD97CF2AC54D210040FEAB /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD97CE2AC54D210040FEAB /* ProductDetailView.swift */; };
+		08E11F802ACAC31100608ED7 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E11F7F2ACAC31100608ED7 /* ReviewsView.swift */; };
+		08EA53D32ABB330700F1CCAE /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA53D22ABB330700F1CCAE /* SignInView.swift */; };
+		08FEE90B2ACA77DB005F141A /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08FEE9082ACA77DB005F141A /* Inter-SemiBold.ttf */; };
+		08FEE90C2ACA77DB005F141A /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08FEE9092ACA77DB005F141A /* Inter-Bold.ttf */; };
+		08FEE90D2ACA77DB005F141A /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08FEE90A2ACA77DB005F141A /* Inter-Regular.ttf */; };
+		08FEE90F2ACA79EC005F141A /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08FEE90E2ACA79EC005F141A /* Inter-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080562B62AB9ADFC00202E0F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		080FA5D42AC06F2A002EC3E9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		08159C1D2AD17A5A00315EF0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		08175FE52AB954DE0018EE42 /* LazProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08175FE82AB954DE0018EE42 /* LazProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazProjectApp.swift; sourceTree = "<group>"; };
 		08175FEA2AB954DE0018EE42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08175FEC2AB954E00018EE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08175FEF2AB954E00018EE42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		08175FF92AB959F50018EE42 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		081760002AB967C30018EE42 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		081C14322ACB0D1100660F74 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		0842BDD32AC19CCB00E50012 /* DashboardNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigation.swift; sourceTree = "<group>"; };
+		0883100E2ABFE9810034E850 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		088310102ABFE99E0034E850 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		089CD1AD2ACBBCE70020A77B /* OneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneView.swift; sourceTree = "<group>"; };
+		089CD1AE2ACBBCE80020A77B /* ThreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
+		089CD1AF2ACBBCE80020A77B /* TwoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoView.swift; sourceTree = "<group>"; };
+		089CD1B32ACBDB5D0020A77B /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		08A7B9192ABDD23300BE7E8F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		08ACC8702ABBF5EB00DE4D26 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		08ACC8722ABBFA1F00DE4D26 /* VerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeView.swift; sourceTree = "<group>"; };
+		08ACC8742ABC02B500DE4D26 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		08ACC8762ABC0F1500DE4D26 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
+		08BEA3922AC29119003FD670 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		08BEA3942AC29A4C003FD670 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		08C4873A2AC2E2CA00245998 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		08DD97CE2AC54D210040FEAB /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		08E11F7F2ACAC31100608ED7 /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
+		08EA53D22ABB330700F1CCAE /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		08FEE9082ACA77DB005F141A /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		08FEE9092ACA77DB005F141A /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		08FEE90A2ACA77DB005F141A /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		08FEE90E2ACA79EC005F141A /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +107,13 @@
 		08175FE72AB954DE0018EE42 /* LazProject */ = {
 			isa = PBXGroup;
 			children = (
+				089CD1AC2ACBBCDE0020A77B /* Example */,
+				08FEE9072ACA77B6005F141A /* Fonts */,
+				08175FFB2AB95B3F0018EE42 /* Extensions */,
+				08175FF82AB955170018EE42 /* ViewModel */,
+				08175FF72AB955120018EE42 /* View */,
+				08175FF62AB9550B0018EE42 /* Model */,
+				08D222402ABC37C00071E76E /* Services */,
 				08175FE82AB954DE0018EE42 /* LazProjectApp.swift */,
 				08175FEA2AB954DE0018EE42 /* ContentView.swift */,
 				08175FEC2AB954E00018EE42 /* Assets.xcassets */,
@@ -65,6 +128,83 @@
 				08175FEF2AB954E00018EE42 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		08175FF62AB9550B0018EE42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				080FA5D42AC06F2A002EC3E9 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		08175FF72AB955120018EE42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				081C14322ACB0D1100660F74 /* AddReviewView.swift */,
+				08E11F7F2ACAC31100608ED7 /* ReviewsView.swift */,
+				08DD97CE2AC54D210040FEAB /* ProductDetailView.swift */,
+				08175FF92AB959F50018EE42 /* OnBoardingView.swift */,
+				081760002AB967C30018EE42 /* GetStartedView.swift */,
+				080562B62AB9ADFC00202E0F /* SignUpView.swift */,
+				08EA53D22ABB330700F1CCAE /* SignInView.swift */,
+				08ACC8702ABBF5EB00DE4D26 /* ForgotPasswordView.swift */,
+				08ACC8722ABBFA1F00DE4D26 /* VerificationCodeView.swift */,
+				08ACC8762ABC0F1500DE4D26 /* NewPasswordView.swift */,
+				08A7B9192ABDD23300BE7E8F /* HomeView.swift */,
+				0842BDD32AC19CCB00E50012 /* DashboardNavigation.swift */,
+				08BEA3922AC29119003FD670 /* SplashScreenView.swift */,
+				089CD1B32ACBDB5D0020A77B /* CartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08175FF82AB955170018EE42 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0883100E2ABFE9810034E850 /* SignInViewModel.swift */,
+				08C4873A2AC2E2CA00245998 /* HomeViewModel.swift */,
+				08159C1D2AD17A5A00315EF0 /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		08175FFB2AB95B3F0018EE42 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				08ACC8742ABC02B500DE4D26 /* OTPTextField.swift */,
+				08BEA3942AC29A4C003FD670 /* Test.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		089CD1AC2ACBBCDE0020A77B /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				089CD1AD2ACBBCE70020A77B /* OneView.swift */,
+				089CD1AE2ACBBCE80020A77B /* ThreeView.swift */,
+				089CD1AF2ACBBCE80020A77B /* TwoView.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		08D222402ABC37C00071E76E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				088310102ABFE99E0034E850 /* WebService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		08FEE9072ACA77B6005F141A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				08FEE90E2ACA79EC005F141A /* Inter-Medium.ttf */,
+				08FEE9092ACA77DB005F141A /* Inter-Bold.ttf */,
+				08FEE90A2ACA77DB005F141A /* Inter-Regular.ttf */,
+				08FEE9082ACA77DB005F141A /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +235,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					08175FE42AB954DE0018EE42 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -125,7 +265,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08FEE90B2ACA77DB005F141A /* Inter-SemiBold.ttf in Resources */,
+				08FEE90D2ACA77DB005F141A /* Inter-Regular.ttf in Resources */,
+				08FEE90F2ACA79EC005F141A /* Inter-Medium.ttf in Resources */,
 				08175FF02AB954E00018EE42 /* Preview Assets.xcassets in Resources */,
+				08FEE90C2ACA77DB005F141A /* Inter-Bold.ttf in Resources */,
 				08175FED2AB954E00018EE42 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +281,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08ACC8772ABC0F1600DE4D26 /* NewPasswordView.swift in Sources */,
+				08C4873B2AC2E2CA00245998 /* HomeViewModel.swift in Sources */,
+				08175FFA2AB959F50018EE42 /* OnBoardingView.swift in Sources */,
+				08A7B91A2ABDD23300BE7E8F /* HomeView.swift in Sources */,
+				088310112ABFE99E0034E850 /* WebService.swift in Sources */,
+				080562B72AB9ADFC00202E0F /* SignUpView.swift in Sources */,
+				081760012AB967C30018EE42 /* GetStartedView.swift in Sources */,
+				0842BDD42AC19CCB00E50012 /* DashboardNavigation.swift in Sources */,
+				08ACC8732ABBFA1F00DE4D26 /* VerificationCodeView.swift in Sources */,
+				080FA5D52AC06F2A002EC3E9 /* Models.swift in Sources */,
+				08BEA3932AC29119003FD670 /* SplashScreenView.swift in Sources */,
+				089CD1B12ACBBCE80020A77B /* ThreeView.swift in Sources */,
+				081C14332ACB0D1100660F74 /* AddReviewView.swift in Sources */,
+				089CD1B22ACBBCE80020A77B /* TwoView.swift in Sources */,
+				08E11F802ACAC31100608ED7 /* ReviewsView.swift in Sources */,
+				089CD1B02ACBBCE80020A77B /* OneView.swift in Sources */,
+				08159C1E2AD17A5A00315EF0 /* CartViewModel.swift in Sources */,
 				08175FEB2AB954DE0018EE42 /* ContentView.swift in Sources */,
+				0883100F2ABFE9810034E850 /* SignInViewModel.swift in Sources */,
+				08DD97CF2AC54D210040FEAB /* ProductDetailView.swift in Sources */,
 				08175FE92AB954DE0018EE42 /* LazProjectApp.swift in Sources */,
+				089CD1B42ACBDB5D0020A77B /* CartView.swift in Sources */,
+				08ACC8752ABC02B500DE4D26 /* OTPTextField.swift in Sources */,
+				08EA53D32ABB330700F1CCAE /* SignInView.swift in Sources */,
+				08BEA3952AC29A4C003FD670 /* Test.swift in Sources */,
+				08ACC8712ABBF5EB00DE4D26 /* ForgotPasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +349,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -241,6 +410,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -270,11 +440,13 @@
 				DEVELOPMENT_TEAM = P8794RMH4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LazProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +471,13 @@
 				DEVELOPMENT_TEAM = P8794RMH4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LazProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

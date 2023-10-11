@@ -16,6 +16,14 @@ struct CartView: View {
     @State private var totalItem = 1
     @State private var jumlahBarang = 5
     
+    var totalCartPrice: Double {
+            var totalPrice = 0.0
+            for cart in cartVM.carts {
+                totalPrice += Double(cart.price)
+            }
+            return totalPrice
+        }
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -130,7 +138,7 @@ struct CartView: View {
                         Text(signInVM.user?.name ?? "Default")
                             .font(.custom("Inter-Mdeium", size: 15))
                         
-                        Text("Sylhet")
+                        Text("\(signInVM.user?.role ?? "Default") * Harusnya Alamat")
                             .font(.custom("Inter-Regular", size: 13))
                             .foregroundStyle(Color.gray)
                     }
@@ -194,7 +202,7 @@ struct CartView: View {
                             .font(.custom("Inter-Regular", size: 15))
                             .padding(.leading)
                         Spacer()
-                        Text("$110")
+                        Text("$\(String(format: "%.0f", totalCartPrice))")
                             .padding(.trailing)
                             .font(.custom("Inter-SemiBold", size: 15))
                     }

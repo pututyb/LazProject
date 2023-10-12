@@ -143,6 +143,7 @@
 		08175FF72AB955120018EE42 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				08D2FFA52AD77C0F00BA925A /* AddressView.swift */,
 				081C14322ACB0D1100660F74 /* AddReviewView.swift */,
 				08E11F7F2ACAC31100608ED7 /* ReviewsView.swift */,
 				08DD97CE2AC54D210040FEAB /* ProductDetailView.swift */,
@@ -176,7 +177,6 @@
 			children = (
 				08ACC8742ABC02B500DE4D26 /* OTPTextField.swift */,
 				08BEA3942AC29A4C003FD670 /* Test.swift */,
-				08D2FFA52AD77C0F00BA925A /* AddressView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

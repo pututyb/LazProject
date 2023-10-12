@@ -53,7 +53,8 @@ struct CartView: View {
                             Text(cart.title)
                                 .font(.system(size: 13))
                             
-                            Text("$\(cart.price * totalItem)")
+                            Text("$\(cart.price * totalItem) (-$4.00 Tax)")
+                                .foregroundStyle(.gray)
                                 .font(.system(size: 11))
                             
                             HStack(spacing: 15) {

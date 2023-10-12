@@ -32,6 +32,7 @@
 		08BEA3932AC29119003FD670 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BEA3922AC29119003FD670 /* SplashScreenView.swift */; };
 		08BEA3952AC29A4C003FD670 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BEA3942AC29A4C003FD670 /* Test.swift */; };
 		08C4873B2AC2E2CA00245998 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4873A2AC2E2CA00245998 /* HomeViewModel.swift */; };
+		08D2FFA62AD77C0F00BA925A /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D2FFA52AD77C0F00BA925A /* AddressView.swift */; };
 		08DD97CF2AC54D210040FEAB /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DD97CE2AC54D210040FEAB /* ProductDetailView.swift */; };
 		08E11F802ACAC31100608ED7 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E11F7F2ACAC31100608ED7 /* ReviewsView.swift */; };
 		08EA53D32ABB330700F1CCAE /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA53D22ABB330700F1CCAE /* SignInView.swift */; };
@@ -68,6 +69,7 @@
 		08BEA3922AC29119003FD670 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		08BEA3942AC29A4C003FD670 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		08C4873A2AC2E2CA00245998 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		08D2FFA52AD77C0F00BA925A /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		08DD97CE2AC54D210040FEAB /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		08E11F7F2ACAC31100608ED7 /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		08EA53D22ABB330700F1CCAE /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				08ACC8742ABC02B500DE4D26 /* OTPTextField.swift */,
 				08BEA3942AC29A4C003FD670 /* Test.swift */,
+				08D2FFA52AD77C0F00BA925A /* AddressView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				08175FE92AB954DE0018EE42 /* LazProjectApp.swift in Sources */,
 				089CD1B42ACBDB5D0020A77B /* CartView.swift in Sources */,
 				08ACC8752ABC02B500DE4D26 /* OTPTextField.swift in Sources */,
+				08D2FFA62AD77C0F00BA925A /* AddressView.swift in Sources */,
 				08EA53D32ABB330700F1CCAE /* SignInView.swift in Sources */,
 				08BEA3952AC29A4C003FD670 /* Test.swift in Sources */,
 				08ACC8712ABBF5EB00DE4D26 /* ForgotPasswordView.swift in Sources */,

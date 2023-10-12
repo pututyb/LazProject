@@ -16,6 +16,8 @@ struct CartView: View {
     @State private var totalItem = 1
     @State private var jumlahBarang = 5
     
+    @State private var addressView = false
+    
     var totalCartPrice: Double {
             var totalPrice = 0.0
             for cart in cartVM.carts {
@@ -115,10 +117,13 @@ struct CartView: View {
                     Spacer()
                     
                     Button(action: {
-                        
+                        addressView = true
                     }) {
                         Image(systemName: "arrow.right")
                             .foregroundStyle(Color.primary)
+                    }
+                    .navigationDestination(isPresented: $addressView) {
+                        AddressView()
                     }
                     .padding(.trailing)
                 }
@@ -202,7 +207,7 @@ struct CartView: View {
                             .font(.custom("Inter-Regular", size: 15))
                             .padding(.leading)
                         Spacer()
-                        Text("$\(String(format: "%.0f", totalCartPrice))")
+                        Text("$\(String(format: "%.0f", totalCartPrice * Double(totalItem)))")
                             .padding(.trailing)
                             .font(.custom("Inter-SemiBold", size: 15))
                     }

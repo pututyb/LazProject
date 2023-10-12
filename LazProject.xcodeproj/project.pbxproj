@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		080562B72AB9ADFC00202E0F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080562B62AB9ADFC00202E0F /* SignUpView.swift */; };
+		080F802F2AD807A500FD6985 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080F802E2AD807A500FD6985 /* PaymentView.swift */; };
 		080FA5D52AC06F2A002EC3E9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080FA5D42AC06F2A002EC3E9 /* Models.swift */; };
 		08159C1E2AD17A5A00315EF0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08159C1D2AD17A5A00315EF0 /* CartViewModel.swift */; };
 		08175FE92AB954DE0018EE42 /* LazProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08175FE82AB954DE0018EE42 /* LazProjectApp.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		080562B62AB9ADFC00202E0F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		080F802E2AD807A500FD6985 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		080FA5D42AC06F2A002EC3E9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		08159C1D2AD17A5A00315EF0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		08175FE52AB954DE0018EE42 /* LazProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				0842BDD32AC19CCB00E50012 /* DashboardNavigation.swift */,
 				08BEA3922AC29119003FD670 /* SplashScreenView.swift */,
 				089CD1B32ACBDB5D0020A77B /* CartView.swift */,
+				080F802E2AD807A500FD6985 /* PaymentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				08E11F802ACAC31100608ED7 /* ReviewsView.swift in Sources */,
 				089CD1B02ACBBCE80020A77B /* OneView.swift in Sources */,
 				08159C1E2AD17A5A00315EF0 /* CartViewModel.swift in Sources */,
+				080F802F2AD807A500FD6985 /* PaymentView.swift in Sources */,
 				08175FEB2AB954DE0018EE42 /* ContentView.swift in Sources */,
 				0883100F2ABFE9810034E850 /* SignInViewModel.swift in Sources */,
 				08DD97CF2AC54D210040FEAB /* ProductDetailView.swift in Sources */,

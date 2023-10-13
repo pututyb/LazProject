@@ -14,16 +14,59 @@ struct PaymentView: View {
     @State private var cardCvv: String = ""
     @State private var savedCard = true
     
+    @State private var isFlipped = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(0..<4) { index in
-                        Rectangle()
-                            .frame(width: 300, height: 185)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding()
+                        VStack (alignment: .leading) {
+                            HStack {
+                                Text(cardHolder)
+                                    .foregroundStyle(.white)
+                                    .font(.custom("Inter-Regular", size: 15))
+                                    .padding(.leading)
+                                
+                                Spacer()
+                                
+                                Image("mastercard")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30)
+                                    .padding(.trailing)
+                            }
+                            
+                            Text("Visa Classic")
+                                .foregroundStyle(.white)
+                                .font(.custom("Inter-Regular", size: 15))
+                                .padding(.leading)
+                            
+                            HStack {
+                                Text(cardNumber)
+                                    .foregroundStyle(.white)
+                                    .font(.custom("Inter-Regular", size: 15))
+                                    .padding(.leading)
+                                
+                                Spacer()
+                                
+                                Text(cardExp)
+                                    .foregroundStyle(.white)
+                                    .font(.custom("Inter-Regular", size: 15))
+                                    .padding(.trailing)
+                            }
+                        }
+                        .frame(width: 320, height: 185)
+                        .background(Color("btnPrimary"))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                        .rotation3DEffect(.degrees(isFlipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
+                        .onTapGesture {
+                            withAnimation {
+                                isFlipped.toggle()
+                            }
+                        }
                     }
                 }
                 .scrollTargetLayout()
@@ -132,9 +175,9 @@ struct PaymentView: View {
         
         VStack {
             Button(action: {
-                print("Save Address")
+                print("Save Card")
             }) {
-                Text("Save Address")
+                Text("Save Card")
                     .font(.system(size: 17, weight: .semibold))
                     .foregroundColor(.white)
                     .padding()
@@ -158,22 +201,19 @@ struct PaymentView: View {
     }
     
     func formatCardExp(_ cardExp: String) -> String {
-        let strippedCardExp = cardExp.replacingOccurrences(of: " ", with: "")
-        var formattedCardExp = ""
-        if strippedCardExp.count > 5 {
-            return String(strippedCardExp.prefix(5))
+        var formattedCardExp = cardExp
+        if formattedCardExp.count == 3 && !formattedCardExp.contains("/") {
+            let startIndex = formattedCardExp.startIndex
+            let thirdPosition = formattedCardExp.index(startIndex, offsetBy: 2)
+            formattedCardExp.insert("/", at: thirdPosition)
         }
-        if strippedCardExp.count <= 2 {
-            formattedCardExp = strippedCardExp
-        } else if strippedCardExp.count == 4 {
-            formattedCardExp = String(strippedCardExp.prefix(2)) + "/" + String(strippedCardExp.suffix(2))
-        } else {
-            formattedCardExp = strippedCardExp
+        if formattedCardExp.last == "/" {
+            formattedCardExp.removeLast()
         }
+        formattedCardExp = String(formattedCardExp.prefix(5))
+        
         return formattedCardExp
     }
-    
-    
 }
 
 #Preview {

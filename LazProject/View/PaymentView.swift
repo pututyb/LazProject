@@ -12,9 +12,24 @@ struct PaymentView: View {
     @State private var cardNumber: String = ""
     @State private var cardExp: String = ""
     @State private var cardCvv: String = ""
+    @State private var savedCard = true
     
     var body: some View {
         VStack(alignment: .leading) {
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(0..<4) { index in
+                        Rectangle()
+                            .frame(width: 300, height: 185)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding()
+                    }
+                }
+                .scrollTargetLayout()
+            }
+            .scrollTargetBehavior(.viewAligned)
+            
             Button(action: {
                 print("Add new card")
             }) {
@@ -44,6 +59,7 @@ struct PaymentView: View {
                 .background(Color("btnColor"))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal)
+                .autocorrectionDisabled()
             
             Text("Card Number")
                 .font(.custom("Inter-SemiBold", size: 17))
@@ -96,9 +112,37 @@ struct PaymentView: View {
                         .background(Color("btnColor"))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding(.horizontal)
+                        .onChange(of: cardCvv) {
+                            cardCvv = String(cardCvv.prefix(3))
+                        }
                 }
             }
+            
+            HStack {
+                Text("Save card info")
+                    .font(.custom("Inter-Regular", size: 15))
+                    .padding()
+                
+                Toggle("", isOn: $savedCard)
+                    .scaleEffect(0.8)
+            }
         }
+        
+        Spacer()
+        
+        VStack {
+            Button(action: {
+                print("Save Address")
+            }) {
+                Text("Save Address")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color("btnPrimary"))
+            }
+        }
+        .padding(.bottom)
     }
     
     func formatCardNumber(_ cardNumber: String) -> String {

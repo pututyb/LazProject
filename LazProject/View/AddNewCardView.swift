@@ -10,37 +10,44 @@ import SwiftUI
 struct AddNewCardView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var btnImages = ["mastercard", "paypal", "logo"]
+    var btnImages = ["mastercard", "paypal", "bank"]
     
     
     @State private var selectedButton: String?
     
     var body: some View {
-        VStack {
-            HStack {
-                ForEach(btnImages, id: \.self) { imageName in
-                    Button(action: {
-                        selectedButton = imageName
-                    }) {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundStyle(selectedButton == imageName ? Color("roseWhite") : Color("bgButtonBack"))
-                            .frame(width: 100, height: 50)
-                            .overlay(
-                                Image(imageName)
-                                    .font(.system(size: 26))
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(selectedButton == imageName ? Color.orange : Color.clear, lineWidth: 2)
-                            )
-                            .padding(.horizontal)
+        ZStack {
+            Color("bgColor")
+                .ignoresSafeArea()
+            
+            VStack {
+                HStack {
+                    ForEach(btnImages, id: \.self) { imageName in 
+                        Button(action: {
+                            selectedButton = imageName
+                        }) {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundStyle(selectedButton == imageName ? Color("roseWhite") : Color("bgButtonBack"))
+                                .frame(width: 100, height: 50)
+                                .overlay(
+                                    Image(imageName)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 20, height: 20)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(selectedButton == imageName ? Color.orange : Color.clear, lineWidth: 2)
+                                )
+                                .padding(.horizontal)
+                        }
                     }
                 }
+                .padding(.top)
+                
+                Spacer()
             }
-            .padding(.top)
-            
-            Spacer()
-        }.navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: {
@@ -59,6 +66,7 @@ struct AddNewCardView: View {
             .padding(.top)
             .navigationTitle("Add New Card")
         .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

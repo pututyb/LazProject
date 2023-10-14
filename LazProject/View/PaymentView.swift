@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+enum CardType {
+    case visa
+    case mastercard
+    case unknown
+}
+
 struct PaymentView: View {
     @State private var cardHolder: String = ""
     @State private var cardNumber: String = ""
@@ -14,7 +20,37 @@ struct PaymentView: View {
     @State private var cardCvv: String = ""
     @State private var savedCard = true
     
-    @State private var isFlipped = false
+    
+    var cardType: CardType {
+        guard cardNumber.isEmpty == false else {
+            return .unknown
+        }
+        
+        guard let firstDigit = cardNumber.first else {
+            return .unknown
+        }
+        
+        switch firstDigit {
+        case "4":
+            return .visa
+        case "5":
+            return .mastercard
+        default:
+            return .unknown
+        }
+    }
+
+    
+    var cardImageName: String {
+        switch cardType {
+        case .visa:
+            return "visa"
+        case .mastercard:
+            return "mastercard"
+        default:
+            return "logo"
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,21 +63,25 @@ struct PaymentView: View {
                                 Text(cardHolder)
                                     .foregroundStyle(.white)
                                     .font(.custom("Inter-Regular", size: 15))
-                                    .padding(.leading)
+                                
                                 
                                 Spacer()
                                 
-                                Image("mastercard")
+                                Image(cardImageName)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 30, height: 30)
-                                    .padding(.trailing)
                             }
+                            .padding(.top)
+                            .padding(.horizontal)
                             
-                            Text("Visa Classic")
+                            Spacer()
+                            
+                            Text(cardNumber.isEmpty ? "" : (cardType == .visa ? "Visa" : "MasterCard"))
                                 .foregroundStyle(.white)
                                 .font(.custom("Inter-Regular", size: 15))
                                 .padding(.leading)
+                                .padding(.bottom)
                             
                             HStack {
                                 Text(cardNumber)
@@ -51,22 +91,24 @@ struct PaymentView: View {
                                 
                                 Spacer()
                                 
-                                Text(cardExp)
+                                Text(cardCvv)
                                     .foregroundStyle(.white)
                                     .font(.custom("Inter-Regular", size: 15))
                                     .padding(.trailing)
                             }
+                            .padding(.bottom)
+                            
+                            Text(cardExp)
+                                .foregroundStyle(.white)
+                                .font(.custom("Inter-Regular", size: 15))
+                                .padding(.leading)
+                            
+                            Spacer()
                         }
                         .frame(width: 320, height: 185)
                         .background(Color("btnPrimary"))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
-                        .rotation3DEffect(.degrees(isFlipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
-                        .onTapGesture {
-                            withAnimation {
-                                isFlipped.toggle()
-                            }
-                        }
                     }
                 }
                 .scrollTargetLayout()

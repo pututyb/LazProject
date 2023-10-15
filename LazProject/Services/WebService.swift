@@ -268,4 +268,31 @@ class WebService {
     }
     
     
+    ///MARK THIS FOR PAYMENT
+    
+    func getPayments(completion: @escaping (Result<[Payment], NetworkError>) -> Void) {
+        guard let url = URL(string: "http://localhost:3000/api/payments/") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            do {
+                let payments = try JSONDecoder().decode([Payment].self, from: data)
+                completion(.success(payments))
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
+    
+    
 }

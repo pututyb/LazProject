@@ -30,3 +30,12 @@ struct Product: Codable {
     let category: Category
     let images: [URL]
 }
+
+struct Payment: Codable {
+    let _id: String
+    let cardHolder: String
+    let cardType: String
+    let cardNumber: String
+    let cardExp: String
+    let cardCvv: String
+}

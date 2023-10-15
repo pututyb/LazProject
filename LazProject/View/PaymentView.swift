@@ -16,6 +16,8 @@ enum CardType {
 struct PaymentView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @StateObject private var paymentVM = PaymentViewModel()
+    
     @State private var cardHolder: String = ""
     @State private var cardNumber: String = ""
     @State private var cardExp: String = ""
@@ -61,17 +63,17 @@ struct PaymentView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(0..<4) { index in
+                        ForEach(paymentVM.payments, id: \._id) { index in
                             VStack (alignment: .leading) {
                                 HStack {
-                                    Text(cardHolder)
+                                    Text(index.cardHolder)
                                         .foregroundStyle(.white)
                                         .font(.custom("Inter-Regular", size: 15))
                                     
                                     
                                     Spacer()
                                     
-                                    Image(cardImageName)
+                                    Image(index.cardType.lowercased())
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 30, height: 30)
@@ -81,28 +83,28 @@ struct PaymentView: View {
                                 
                                 Spacer()
                                 
-                                Text(cardNumber.isEmpty ? "" : (cardType == .visa ? "Visa" : "MasterCard"))
+                                Text(index.cardType)
                                     .foregroundStyle(.white)
                                     .font(.custom("Inter-Regular", size: 15))
                                     .padding(.leading)
                                     .padding(.bottom)
                                 
                                 HStack {
-                                    Text(cardNumber)
+                                    Text(index.cardNumber)
                                         .foregroundStyle(.white)
                                         .font(.custom("Inter-Regular", size: 15))
                                         .padding(.leading)
                                     
                                     Spacer()
                                     
-                                    Text(cardCvv)
+                                    Text(index.cardCvv)
                                         .foregroundStyle(.white)
                                         .font(.custom("Inter-Regular", size: 15))
                                         .padding(.trailing)
                                 }
                                 .padding(.bottom)
                                 
-                                Text(cardExp)
+                                Text(index.cardExp)
                                     .foregroundStyle(.white)
                                     .font(.custom("Inter-Regular", size: 15))
                                     .padding(.leading)
@@ -227,6 +229,9 @@ struct PaymentView: View {
                 }
                 .padding(.bottom)
                 
+            }
+            .onAppear {
+                paymentVM.fetchPayments()
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

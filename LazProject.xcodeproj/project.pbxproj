@@ -26,6 +26,7 @@
 		089CD1B12ACBBCE80020A77B /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089CD1AE2ACBBCE80020A77B /* ThreeView.swift */; };
 		089CD1B22ACBBCE80020A77B /* TwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089CD1AF2ACBBCE80020A77B /* TwoView.swift */; };
 		089CD1B42ACBDB5D0020A77B /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089CD1B32ACBDB5D0020A77B /* CartView.swift */; };
+		08A62AF12ADBA38800B95FC0 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A62AF02ADBA38800B95FC0 /* CreditCard.swift */; };
 		08A7B91A2ABDD23300BE7E8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7B9192ABDD23300BE7E8F /* HomeView.swift */; };
 		08ACC8712ABBF5EB00DE4D26 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACC8702ABBF5EB00DE4D26 /* ForgotPasswordView.swift */; };
 		08ACC8732ABBFA1F00DE4D26 /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACC8722ABBFA1F00DE4D26 /* VerificationCodeView.swift */; };
@@ -65,6 +66,7 @@
 		089CD1AE2ACBBCE80020A77B /* ThreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
 		089CD1AF2ACBBCE80020A77B /* TwoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoView.swift; sourceTree = "<group>"; };
 		089CD1B32ACBDB5D0020A77B /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		08A62AF02ADBA38800B95FC0 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		08A7B9192ABDD23300BE7E8F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		08ACC8702ABBF5EB00DE4D26 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		08ACC8722ABBFA1F00DE4D26 /* VerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				08ACC8742ABC02B500DE4D26 /* OTPTextField.swift */,
 				08BEA3942AC29A4C003FD670 /* Test.swift */,
+				08A62AF02ADBA38800B95FC0 /* CreditCard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				08A7B91A2ABDD23300BE7E8F /* HomeView.swift in Sources */,
 				088310112ABFE99E0034E850 /* WebService.swift in Sources */,
 				080562B72AB9ADFC00202E0F /* SignUpView.swift in Sources */,
+				08A62AF12ADBA38800B95FC0 /* CreditCard.swift in Sources */,
 				081760012AB967C30018EE42 /* GetStartedView.swift in Sources */,
 				0842BDD42AC19CCB00E50012 /* DashboardNavigation.swift in Sources */,
 				08ACC8732ABBFA1F00DE4D26 /* VerificationCodeView.swift in Sources */,

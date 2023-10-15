@@ -14,6 +14,8 @@ enum CardType {
 }
 
 struct PaymentView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var cardHolder: String = ""
     @State private var cardNumber: String = ""
     @State private var cardExp: String = ""
@@ -108,7 +110,7 @@ struct PaymentView: View {
                                 Spacer()
                             }
                             .frame(width: 320, height: 185)
-                            .background(Color("btnPrimary"))
+                            .background(Color("btnPrimary").opacity(0.5))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                             .padding()
                         }
@@ -165,7 +167,6 @@ struct PaymentView: View {
                         }
                         cardNumber = formatCardNumber(cardNumber)
                     }
-                
                 HStack {
                     VStack(alignment: .leading) {
                         Text("EXP")
@@ -204,7 +205,6 @@ struct PaymentView: View {
                             }
                     }
                 }
-                
                 HStack {
                     Text("Save card info")
                         .font(.custom("Inter-Regular", size: 15))
@@ -213,7 +213,6 @@ struct PaymentView: View {
                     Toggle("", isOn: $savedCard)
                         .scaleEffect(0.8)
                 }
-                
                 Spacer()
                 
                 Button(action: {
@@ -229,6 +228,24 @@ struct PaymentView: View {
                 .padding(.bottom)
                 
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Circle()
+                            .foregroundColor(Color("bgButtonBack"))
+                            .frame(width: 50, height: 50)
+                            .overlay(
+                                Image(systemName: "arrow.left")
+                                    .foregroundColor(Color.primary)
+                            )
+                    }
+                }
+            }
+            .navigationTitle("Payment")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
         }
         
     }

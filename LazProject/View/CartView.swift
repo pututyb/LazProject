@@ -17,6 +17,7 @@ struct CartView: View {
     @State private var jumlahBarang = 5
     
     @State private var addressView = false
+    @State private var paymentView = false
     
     var totalCartPrice: Double {
             var totalPrice = 0.0
@@ -91,7 +92,6 @@ struct CartView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    //delete cart item
                                     cartVM.deleteCartItem(cartID: cart.id)
                                 }) {
                                     Image(systemName: "trash")
@@ -165,10 +165,12 @@ struct CartView: View {
                     Spacer()
                     
                     Button(action: {
-                        
+                        paymentView = true
                     }) {
                         Image(systemName: "arrow.right")
                             .foregroundStyle(Color.primary)
+                    }.navigationDestination(isPresented: $paymentView) {
+                        PaymentView()
                     }
                     .padding(.trailing)
                 }
@@ -229,7 +231,7 @@ struct CartView: View {
                             .font(.custom("Inter-Regular", size: 15))
                             .padding(.leading)
                         Spacer()
-                        Text("$120")
+                        Text("$\(String(format: "%.0f", totalCartPrice * Double(totalItem) + 10))")
                             .padding(.trailing)
                             .font(.custom("Inter-SemiBold", size: 15))
                     }

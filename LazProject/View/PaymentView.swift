@@ -18,11 +18,17 @@ struct PaymentView: View {
     
     @StateObject private var paymentVM = PaymentViewModel()
     
+    @State private var selectedCard: Payment! = nil
+    
     @State private var cardHolder: String = ""
     @State private var cardNumber: String = ""
     @State private var cardExp: String = ""
     @State private var cardCvv: String = ""
-    @State private var savedCard = true
+    
+    @State private var savedCard = false
+    
+    @State private var addNewCard = false
+    
     
     
     var cardType: CardType {
@@ -112,9 +118,17 @@ struct PaymentView: View {
                                 Spacer()
                             }
                             .frame(width: 320, height: 185)
-                            .background(Color("btnPrimary").opacity(0.5))
+                            .background(LinearGradient(gradient: Gradient(colors: [Color("yellowCard"), Color("redCard")]), startPoint: .topLeading, endPoint: .bottomTrailing))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                             .padding()
+                            .onTapGesture {
+                                selectedCard = index
+                                
+                                cardHolder = index.cardHolder
+                                cardNumber = index.cardNumber
+                                cardExp = index.cardExp
+                                cardCvv = index.cardCvv
+                            }
                         }
                     }
                     .scrollTargetLayout()
@@ -122,7 +136,7 @@ struct PaymentView: View {
                 .scrollTargetBehavior(.viewAligned)
                 
                 Button(action: {
-                    print("Add new card")
+                    addNewCard = true
                 }) {
                     HStack {
                         Image(systemName: "plus.square")
@@ -136,7 +150,10 @@ struct PaymentView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.purple, lineWidth: 2)
                     )
-                    .padding()
+                    .padding(.horizontal)
+                    .navigationDestination(isPresented: $addNewCard) {
+                        AddNewCardView()
+                    }
                 }
                 
                 Text("Cardholder Name")
@@ -151,6 +168,7 @@ struct PaymentView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding(.horizontal)
                     .autocorrectionDisabled()
+                    .disabled(!savedCard)
                 
                 Text("Card Number")
                     .font(.custom("Inter-SemiBold", size: 17))

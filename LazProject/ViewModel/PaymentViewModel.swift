@@ -23,4 +23,18 @@ class PaymentViewModel: ObservableObject {
             }
         }
     }
+    
+    func addPayments(payment: Payment) {
+        WebService().createPayment(payment: payment) { result in
+            switch result {
+            case.success(let createPayment):
+                DispatchQueue.main.async {
+                    self.payments.append(createPayment)
+                    print("Successfully add payment")
+                }
+            case.failure(let error):
+                print("Error ViewModel Handling Add Payment: \(error)")
+            }
+        }
+    }
 }

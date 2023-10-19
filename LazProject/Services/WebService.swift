@@ -294,5 +294,39 @@ class WebService {
         }.resume()
     }
     
+    func createPayment(payment: Payment, completion: @escaping (Result<Payment, NetworkError>) -> Void) {
+        guard let url = URL(string: "http://localhost:3000/api/payments") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        do {
+            let jsonData = try JSONEncoder().encode(payment)
+            request.httpBody = jsonData
+        } catch {
+            completion(.failure(.encodingError))
+            return
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            do {
+                let createPayment = try JSONDecoder().decode(Payment.self, from: data)
+                completion(.success(createPayment))
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
+    
     
 }

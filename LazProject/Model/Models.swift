@@ -31,8 +31,7 @@ struct Product: Codable {
     let images: [URL]
 }
 
-struct Payment: Codable {
-    let _id: String
+struct Payment: Codable, Hashable {
     let cardHolder: String
     let cardType: String
     let cardNumber: String

@@ -10,6 +10,10 @@ import SwiftUI
 struct AddNewCardView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @StateObject private var paymentVM = PaymentViewModel()
+    
+    @State private var isPaymentAdded = false
+    
     @State private var cardHolder: String = ""
     @State private var cardNumber: String = ""
     @State private var cardExp: String = ""
@@ -27,6 +31,36 @@ struct AddNewCardView: View {
             return "Add Bank"
         default:
             return "Add Card"
+        }
+    }
+    
+    var cardType: CardType {
+        guard cardNumber.isEmpty == false else {
+            return .unknown
+        }
+        
+        guard let firstDigit = cardNumber.first else {
+            return .unknown
+        }
+        
+        switch firstDigit {
+        case "4":
+            return .visa
+        case "5":
+            return .mastercard
+        default:
+            return .unknown
+        }
+    }
+    
+    var cardImageName: String {
+        switch cardType {
+        case .visa:
+            return "visa"
+        case .mastercard:
+            return "mastercard"
+        default:
+            return "logo"
         }
     }
     
@@ -63,12 +97,39 @@ struct AddNewCardView: View {
                 .padding(.vertical)
                 
                 CreditCard(cardHolder: $cardHolder, cardNumber: $cardNumber, cardExp: $cardExp, cardCvv: $cardCvv)
-                    .padding(.top)
+                    .padding()
                 
                 Spacer()
                 
                 Button(action: {
-                    print("Add Payment Success")
+                    var cardType: String = "unknown"
+                    
+                    if !cardNumber.isEmpty {
+                        if let firstDigit = cardNumber.first {
+                            switch firstDigit {
+                            case "4":
+                                cardType = "visa"
+                            case "5":
+                                cardType = "mastercard"
+                            default:
+                                cardType = "unknown"
+                            }
+                        }
+                    }
+                    
+                    let payment = Payment(
+                        cardHolder: cardHolder,
+                        cardType: cardType,
+                        cardNumber: cardNumber,
+                        cardExp: cardExp,
+                        cardCvv: cardCvv
+                    )
+                    
+                    // Use your PaymentViewModel to add the payment
+                    paymentVM.addPayments(payment: payment)
+                    
+                    // Set a flag to indicate that the payment is added
+                    isPaymentAdded = true
                 }) {
                     Text(btnTitle)
                         .font(.system(size: 17, weight: .semibold))
@@ -78,6 +139,16 @@ struct AddNewCardView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.purple)
                 .padding(.bottom)
+                .alert(isPresented: $isPaymentAdded) {
+                    Alert(
+                        title: Text("Payment Added"),
+                        message: Text("Your payment method has been added successfully."),
+                        dismissButton: .default(Text("OK")) {
+                            // You can do additional actions after the payment is added
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    )
+                }
             }
             .navigationBarBackButtonHidden(true)
             .toolbar {

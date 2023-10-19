@@ -49,6 +49,7 @@ struct PaymentView: View {
             return .unknown
         }
     }
+    
     var cardImageName: String {
         switch cardType {
         case .visa:
@@ -69,7 +70,7 @@ struct PaymentView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(paymentVM.payments, id: \._id) { index in
+                        ForEach(paymentVM.payments, id: \.self) { index in
                             VStack (alignment: .leading) {
                                 HStack {
                                     Text(index.cardHolder)

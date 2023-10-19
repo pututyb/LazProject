@@ -47,7 +47,7 @@ struct DashboardNavigation: View {
                                     }
                                     .tag(2)
                                 
-                                Text("My Card Tab")
+                                AddNewCardView()
                                     .tabItem {
                                         Label("My Cards", systemImage: "creditcard")
                                     }

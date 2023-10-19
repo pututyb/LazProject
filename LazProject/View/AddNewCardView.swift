@@ -124,11 +124,7 @@ struct AddNewCardView: View {
                         cardExp: cardExp,
                         cardCvv: cardCvv
                     )
-                    
-                    // Use your PaymentViewModel to add the payment
                     paymentVM.addPayments(payment: payment)
-                    
-                    // Set a flag to indicate that the payment is added
                     isPaymentAdded = true
                 }) {
                     Text(btnTitle)
@@ -137,14 +133,14 @@ struct AddNewCardView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color.purple)
+                .background(Color("btnPrimary"))
                 .padding(.bottom)
                 .alert(isPresented: $isPaymentAdded) {
                     Alert(
                         title: Text("Payment Added"),
                         message: Text("Your payment method has been added successfully."),
                         dismissButton: .default(Text("OK")) {
-                            // You can do additional actions after the payment is added
+                            
                             presentationMode.wrappedValue.dismiss()
                         }
                     )

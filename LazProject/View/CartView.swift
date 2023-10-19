@@ -18,6 +18,7 @@ struct CartView: View {
     
     @State private var addressView = false
     @State private var paymentView = false
+    @State private var orderConfirmView = false
     
     var totalCartPrice: Double {
             var totalPrice = 0.0
@@ -247,6 +248,7 @@ struct CartView: View {
             VStack {
                 Button(action: {
                     print("Checkout Success")
+                    orderConfirmView = true
                 }) {
                     Text("Checkout")
                         .font(.system(size: 17, weight: .semibold))
@@ -254,6 +256,9 @@ struct CartView: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color("btnPrimary"))
+                }
+                .navigationDestination(isPresented: $orderConfirmView) {
+                    OrderConfirmedView()
                 }
             }
             .padding(.bottom)

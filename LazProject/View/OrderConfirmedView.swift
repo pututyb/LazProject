@@ -65,6 +65,7 @@ struct OrderConfirmedView: View {
                             .padding()
                     }
                 }
+                .navigationBarBackButtonHidden(true)
             }
         }
     }
